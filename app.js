@@ -25,3 +25,9 @@ function add (a=10, b=0){
 }
 // const result = add(23,7)
 console.log(add(39,1))
+
+
+ const adds = (a = 0, b = 0 ) => {
+    return a+b
+}
+console.log(adds(1,2))
