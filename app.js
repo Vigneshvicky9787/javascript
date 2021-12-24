@@ -1,33 +1,42 @@
 const punch = document.querySelector('#punch')
-
-console.log(punch)
-
 const scissor = document.querySelector('#scissor')
 const paper = document.querySelector('#paper')
+const board = document.querySelector('#board')
 
 
-punch.addEventListener('click',()=>{
-    console.log('you clicked punch')
-})
+const handler = (event) => {
+    const action = event.target.id
 
-scissor.addEventListener('click',()=>{
-    console.log('you clicked scissor')
-})
+    // if(action === 'punch'){
+    //      console.log('you clicked punch')
+    // }
+    // else if(action === 'scissor'){
+    //     console.log('you clicked scissor')
+    // }
+    // else if(action === 'paper'){
+    //     console.log('you clicked paper')
+    // }
+    // else{
+    //     console.log('click something')
+    // }
 
-paper.addEventListener('click',()=>{
-    console.log('you clicked paper')
-})
-
-// ---------------------------------------------------------
-
-function add (a=10, b=0){
-    return  a+b
+    switch(action){
+       case 'punch':
+           board.innerHTML ='you clicked punch'
+           break;
+       case 'scissor':
+           board.innerHTML ='you clicked scissor'
+           break;
+       case 'paper':
+           board.innerHTML ='you clicked paper'
+           break;
+       default:
+           board.innerHTML = 'click somthing' 
+           break;  
+    }
 }
-// const result = add(23,7)
-console.log(add(39,1))
 
 
- const adds = (a = 0, b = 0 ) => {
-    return a+b
-}
-console.log(adds(1,2))
+punch.addEventListener('click', handler)
+scissor.addEventListener('click', handler)
+paper.addEventListener('click', handler)
